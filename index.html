@@ -32,15 +32,15 @@
     <!-- Search bar start -->
     <form class="col-md-4 m-auto py-3">
         <div class="input-group mb-3">
-            <input id="location" type="text" class="form-control" placeholder="Search for Meal ...">
+            <input id="mealsName" type="text" class="form-control" placeholder="Search for Meal ...">
             <div class="input-group-append">
                 <button id="search-button" type="button" class="btn btn-warning">Search</button>
             </div>
         </div>
     </form>
   <!-- Search bar end -->
-<div class="container">
-  <div> 
+<div id="meal-info" class="container">
+  <div id="info" onclick="mealSearch('${meal.strMeal}')"> 
   <div id="milesInt">
         
     </div> 

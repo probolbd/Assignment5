@@ -1,3 +1,7 @@
+document.addEventListener('click', function(){
+    document.getElementById("meal-info").style.display = "block";
+})
+
 fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
     .then(res => res.json())
     .then (data =>{ displayMeal(data.meals)});
@@ -10,7 +14,7 @@ const displayMeal = meals=>{
         const mealDetails=`
         <img src="${meal.strMealThumb}">
         <h4>${meal.strMeal} </h4>
-        <button onclick="mealSearch('${meal.strMeal}')"> click </button>
+        <button onclick="mealSearch('${meal.strMeal}')"> Details </button>
         `
         ingredientsDiv.innerHTML=mealDetails;
         div.appendChild(ingredientsDiv);   
