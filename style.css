@@ -1,0 +1,15 @@
+.meal-name {
+  display: inline-block;
+  background-color: antiquewhite;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+h4 {
+  color: blue;
+}
+body {
+  background-color: gainsboro;
+}
