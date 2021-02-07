@@ -1,4 +1,4 @@
-fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
     .then(res => res.json())
     .then (data =>{ displayMeal(data.meals)});
 
@@ -8,25 +8,31 @@ const displayMeal = meals=>{
         const ingredientsDiv = document.createElement('div')
         ingredientsDiv.className='meal-name'
         const mealDetails=`
+        <img src="${meal.strMealThumb}">
         <h4>${meal.strMeal} </h4>
-        <p>${meal.strIngredient1} </p>
-        <p>${meal.strIngredient2} </p>
-        <p>${meal.strIngredient3} </p>
-        <p>${meal.strIngredient4} </p>
-        <p>${meal.strIngredient5} </p>
-        <p>${meal.strIngredient6} </p>
-        <p>${meal.strIngredient7} </p>
-        <p>${meal.strIngredient8} </p>
-        <p>${meal.strIngredient9} </p>
-        <p>${meal.strIngredient11} </p>
+        <button onclick="mealSearch('${meal.strMeal}')"> click </button>
         `
         ingredientsDiv.innerHTML=mealDetails;
-
-        div.appendChild(ingredientsDiv);
-        
+        div.appendChild(ingredientsDiv);   
     });
-    // for (let i = 0; i < meals.length; i++) {
-    //     const meal = meals[i];
-     
     }
-    
+    const mealSearch = strMeal =>{
+        const url   =`https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`
+        fetch(url)
+        .then(res => res.json())
+        .then (data => renderMeal(data.meals[0])); 
+    }
+    const renderMeal = meals=>{
+        console.log(meals);
+        const ingredientsDiv =document.getElementById('milesInt');
+        ingredientsDiv.innerHTML=`
+        <img src="${meals.strMealThumb}">
+        <h1>${meals.strMeal}</h1>
+        <p>&#10003; ${meals.strIngredient1} </p>
+        <p>&#10003; ${meals.strIngredient2} </p>
+        <p>&#10003; ${meals.strIngredient3} </p>
+        <p>&#10003; ${meals.strIngredient4} </p>
+        <p>&#10003; ${meals.strIngredient5} </p>
+        <p>&#10003; ${meals.strIngredient6} </p>
+        `
+    }

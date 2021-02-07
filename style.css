@@ -4,7 +4,7 @@
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  width: 400px;
+  width: 340px;
   text-align: center;
 }
 h4 {
@@ -12,4 +12,22 @@ h4 {
 }
 body {
   background-color: gainsboro;
+}
+#milesInt img {
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  padding: 10px;
+}
+#milesInt {
+  text-align: center;
+  display: inline-block;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+#mealsCall img {
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  padding: 10px;
 }
