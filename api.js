@@ -1,7 +1,6 @@
 document.addEventListener('click', function(){
     document.getElementById("meal-info").style.display = "block";
 })
-
 fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
     .then(res => res.json())
     .then (data =>{ displayMeal(data.meals)});
